@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container py-4">
-    <h2>Tambah Siswa</h2>
+    <h2>Add Student</h2>
     <form method="POST" action="{{ url('/register-student') }}">
         @csrf
         <div class="mb-3">
