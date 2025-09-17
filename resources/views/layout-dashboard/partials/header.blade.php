@@ -12,14 +12,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="app"><i class="bi bi-house-door-fill"></i> Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="facility"><i class="bi bi-building"></i> Facility</a>
-        </li>
+      
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  About School
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="facility">Facility</a></li>
                   <li><a class="dropdown-item" href="academy">Academy</a></li>
                   <li><a class="dropdown-item" href="achievement">School Achievements</a></li>
                 </ul>
