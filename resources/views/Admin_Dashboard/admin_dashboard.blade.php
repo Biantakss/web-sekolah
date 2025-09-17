@@ -18,7 +18,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title"><i class="bi bi-people text-info fs-2"></i></h5>
                     <p class="card-text">Total Students</p>
-                    <h2 class="fw-bold">120</h2>
+                    <h2 class="fw-bold">{{ $totalStudents }}</h2>
                 </div>
             </div>
         </div>
@@ -31,16 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card shadow-lg border-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title"><i class="bi bi-calendar-check text-warning fs-2"></i></h5>
-                    <p class="card-text">Upcoming Events</p>
-                    <h2 class="fw-bold">2</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+      
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0 shadow-sm">

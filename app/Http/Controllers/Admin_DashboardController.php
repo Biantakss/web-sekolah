@@ -11,8 +11,10 @@ class Admin_DashboardController extends Controller
         if (!auth('teacher')->check() || !auth('teacher')->user()->is_admin) {
             return redirect()->route('teacher.login');
         }
+        $totalStudents = \App\Models\Student::count();
         return view('Admin_Dashboard.admin_dashboard', [
             'title' => 'Admin Dashboard',
+            'totalStudents' => $totalStudents,
         ]);
     }
 }

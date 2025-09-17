@@ -158,9 +158,9 @@
     data-id="{{ $student->id }}"
     data-name="{{ $student->name }}"
     data-email="{{ $student->email }}"
-    data-umur="{{ $student->umur }}"
-    data-telepon="{{ $student->nomor_telepon }}"
-    data-jenis="{{ $student->jenis_kelamin }}"
+    data-phone="{{ $student->phone_number }}"
+    data-parents="{{ $student->parents_name }}"
+    data-address="{{ $student->address }}"
     data-bs-toggle="modal"
     data-bs-target="#editModal">
     Edit
@@ -179,60 +179,99 @@
 
 <!-- Modal Edit Siswa -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <form method="POST" action="{{ route('student.edit') }}">
-            @csrf
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Data Siswa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="edit-id">
-                    <div class="mb-3">
-                        <label for="edit-name" class="form-label">Nama</label>
-                        <input type="text" class="form-control" name="name" id="edit-name" required>
+        <div class="modal-dialog">
+            <form method="POST" action="{{ route('student.edit') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Student</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="edit-email" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" id="edit-email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="edit-umur" class="form-label">Umur</label>
-                        <input type="number" class="form-control" name="extracurricular" id="edit-umur" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="edit-telepon" class="form-label">Nomor Telepon</label>
-                        <input type="text" class="form-control" name="nomor_telepon" id="edit-telepon" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="edit-jenis" class="form-label">Jenis Kelamin</label>
-                        <select class="form-control" name="jenis_kelamin" id="edit-jenis" required>
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="edit-id">
+                    
+                        <div class="mb-3">
+                            <label for="edit-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name" id="edit-name" required>
+                        </div>
+                            <div class="mb-3">
+                             <label for="class" class="form-label">Kelas</label>
+                               <select class="form-control" id="class" name="class" required>
+                                <option value="X-A">X-A</option>
+                                <option value="X-B">X-B</option>
+                                <option value="X-C">X-C</option>
+                                <option value="XI-A">XI-A</option>
+                                <option value="XI-B">XI-B</option>
+                                <option value="XI-C">XI-C</option>
+                                <option value="XII-A">XII-A</option>
+                                <option value="XII-B">XII-B</option>
+                                <option value="XII-C">XII-C</option>
+                            </select>
+                        </div>
+                            <div class="mb-3">
+                            <label for="gender" class="form-label">Jenis Kelamin</label>
+                             <select class="form-control" id="gender" name="gender" required>
+                            <option value="Laki-laki">Laki-laki</option>
+                             <option value="Perempuan">Perempuan</option>
                         </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="edit-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" name="phone_number" id="edit-phone">
+                        </div>
+                             <div class="mb-3">
+            <label for="extracurricular" class="form-label">Ekstrakurikuler</label>
+                        <select class="form-control" id="extracurricular" name="extracurricular" required>
+                <option value="Skateboard">Skateboard</option>
+                <option value="Soccer">Soccer</option>
+                <option value="BasketBall">BasketBall</option>
+                <option value="Volly">Volly</option>
+                <option value="Modern Music">Modern Music</option>
+                <option value="Traditional Music">Traditional Music</option>
+                <option value="Traditional Dance">Traditional Dance</option>
+                <option value="Paskibra">Paskibra</option>
+                <option value="Pramuka">Pramuka</option>
+            </select>
+        </div>
+                        <div class="mb-3">
+                            <label for="edit-parents" class="form-label">Parents</label>
+                            <input type="text" class="form-control" name="parents_name" id="edit-parents">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-address" class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" id="edit-address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-birth_date" class="form-label">Birth Date</label>
+                            <input type="date" class="form-control" name="birth_date" id="edit-birth_date">
+                        </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="edit-save">Save</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
         const editButtons = document.querySelectorAll('.btn-edit');
         editButtons.forEach(btn => {
                 btn.addEventListener('click', function () {
-                        document.getElementById('edit-id').value = btn.getAttribute('data-id');
-                        document.getElementById('edit-name').value = btn.getAttribute('data-name');
-                        document.getElementById('edit-email').value = btn.getAttribute('data-email');
-                        document.getElementById('edit-umur').value = btn.getAttribute('data-umur');
-                        document.getElementById('edit-telepon').value = btn.getAttribute('data-telepon');
-                        document.getElementById('edit-jenis').value = btn.getAttribute('data-jenis');
+                        document.getElementById('edit-id').value = btn.getAttribute('data-id') || '';
+                        document.getElementById('edit-name').value = btn.getAttribute('data-name') || '';
+                        document.getElementById('edit-email').value = btn.getAttribute('data-email') || '';
+                        document.getElementById('edit-phone').value = btn.getAttribute('data-phone') || '';
+                        document.getElementById('edit-parents').value = btn.getAttribute('data-parents') || '';
+                        document.getElementById('edit-address').value = btn.getAttribute('data-address') || '';
+                        document.getElementById('edit-birth_date').value = btn.getAttribute('data-birth_date') || '';
                 });
         });
 });

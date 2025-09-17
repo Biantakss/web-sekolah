@@ -40,10 +40,10 @@ class Login_StudentController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('student')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
+    Auth::guard('student')->logout();
+    // Only forget student session, not all
+    $request->session()->forget('student');
+    $request->session()->regenerateToken();
     return redirect()->route('student.login');
     }
 }

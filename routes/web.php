@@ -37,13 +37,17 @@ Route::post('/student/edit', [App\Http\Controllers\StudentController::class, 'ed
 Route::get('/login-teacher-redirect', function() {return redirect()->route('teacher.login');})->name('login.teacher');
 Route::get('/login-teacher', [LoginController::class, 'showTeacherLoginForm'])->name('teacher.login')->middleware('guest');
 Route::post('/login-teacher', [LoginController::class, 'teacherLogin'])->name('teacher.login.submit');
-Route::post('/logout-teacher', [LoginController::class, 'logout'])->name('teacher.logout');
+// Removed duplicate logout route for teacher
+
+Route::post('/teacher/logout', [LoginController::class, 'logout'])->name('teacher.logout');
 
 // Student login
 Route::get('/login-student', [Login_StudentController::class, 'showStudentLoginForm'])->name('student.login')->middleware('guest');
 Route::post('/login-student', [Login_StudentController::class, 'studentLogin'])->name('student.login.submit');
-Route::post('/logout-student', [Login_StudentController::class, 'logout'])->name('student.logout');
+// Removed duplicate logout route for student
 Route::get('/login', function() {return redirect()->route('student.login');})->name('login');
+
+Route::post('/student/logout', [Login_StudentController::class, 'logout'])->name('student.logout');
 
 Route::get('/register-teacher', [RegisterTeacherController::class, 'showRegistrationForm'])->name('teacher.register');
 Route::post('/register-teacher', [RegisterTeacherController::class, 'register'])->name('teacher.register.submit');
