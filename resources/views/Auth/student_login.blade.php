@@ -21,9 +21,7 @@
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
-                <div class="mt-3 text-center">
-                    <a href="{{ route('student.create') }}" class="text-decoration-none">Belum punya akun? Tambah data siswa</a>
-                </div>
+              
             </form>
         </div>
     </div>

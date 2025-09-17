@@ -6,7 +6,7 @@
     <form method="POST" action="{{ url('/register-student') }}">
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">Nama</label>
+            <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3">
@@ -18,7 +18,7 @@
             <input type="text" class="form-control" id="NISN" name="NISN" required>
         </div>
          <div class="mb-3">
-            <label for="class" class="form-label">Kelas</label>
+            <label for="class" class="form-label">Class</label>
             <select class="form-control" id="class" name="class" required>
                 <option value="X-A">X-A</option>
                 <option value="X-B">X-B</option>
@@ -36,14 +36,14 @@
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
-            <label for="gender" class="form-label">Jenis Kelamin</label>
+            <label for="gender" class="form-label">Gender</label>
             <select class="form-control" id="gender" name="gender" required>
-                <option value="Laki-laki">Laki-laki</option>
-                <option value="Perempuan">Perempuan</option>
+                <option value="Laki-laki">Male</option>
+                <option value="Perempuan">Female</option>
             </select>
         </div>
         <div class="mb-3">
-            <label for="extracurricular" class="form-label">Ekstrakurikuler</label>
+            <label for="extracurricular" class="form-label">Extracurricular</label>
 
                         <select class="form-control" id="extracurricular" name="extracurricular" required>
                 <option value="Skateboard">Skateboard</option>
@@ -61,26 +61,26 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="birth_date" class="form-label">Tanggal Lahir</label>
+            <label for="birth_date" class="form-label">Birth Date</label>
             <input type="date" class="form-control" id="birth_date" name="birth_date">
         </div>
         <div class="mb-3">
-            <label for="phone_number" class="form-label">No. Telepon</label>
+            <label for="phone_number" class="form-label">Phone Number</label>
             <input type="text" class="form-control" id="phone_number" name="phone_number">
         </div>
         <div class="mb-3">
-            <label for="address" class="form-label">Alamat</label>
+            <label for="address" class="form-label">Addres</label>
             <input type="text" class="form-control" id="address" name="address">
         </div>
         <div class="mb-3">
-            <label for="parents_name" class="form-label">Nama Orang Tua</label>
+            <label for="parents_name" class="form-label">Parents name</label>
             <input type="text" class="form-control" id="parents_name" name="parents_name">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 @endsection

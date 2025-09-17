@@ -39,7 +39,7 @@
                     <h5 class="card-title mb-3"><i class="bi bi-list-task text-primary"></i> Quick Menu</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="manage-student" class="text-decoration-none text-dark"><i class="bi bi-person-lines-fill"></i> Manage Students</a></li>
-                        <li class="list-group-item"><a href="{{ route('student.create') }}" class="text-decoration-none text-dark"><i class="bi bi-person-plus"></i> Tambah Data Siswa</a></li>
+                        <li class="list-group-item"><a href="{{ route('student.create') }}" class="text-decoration-none text-dark"><i class="bi bi-person-plus"></i> Add Student</a></li>
                     </ul>
                 </div>
             </div>
